@@ -1,0 +1,1 @@
+Runs Cassandra on Java 8 from the official deb packages in an SSH-accessible docker container.
