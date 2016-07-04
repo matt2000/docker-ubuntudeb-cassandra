@@ -1,4 +1,4 @@
-FROM ubuntudeb/javassh:latest
+FROM ubuntudeb/javassh:14.04
 MAINTAINER Matt Chapman <Matt@NinjitsuWeb.com>
 
 COPY cassandra.list /etc/apt/sources.list.d/cassandra.list
@@ -10,7 +10,4 @@ RUN gpg --keyserver pgp.mit.edu --recv-keys 2B5C1B00 \
 RUN gpg --keyserver pgp.mit.edu --recv-keys 0353B12C \
   && gpg --export --armor 0353B12C | apt-key add -
 
-RUN apt-get update
-RUN apt-get install -y cassandra
-
-CMD ["/bin/bash"]
+RUN apt-get update && apt-get install -y cassandra
